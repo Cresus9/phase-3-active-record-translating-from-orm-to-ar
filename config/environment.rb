@@ -6,7 +6,19 @@ require 'active_record'
 
 require_relative '../lib/dog'
 
+
+
 ActiveRecord::Base.establish_connection(
   adapter: "sqlite3",
   database: "./db/test.sqlite3"
 )
+sql = <<-SQL
+CREATE TABLE IF NOT EXISTS students (
+  id INTEGER PRIMARY KEY,
+  name TEXT,
+  breed TEXT
+)
+ActiveRecord::Base.connection.execute(sql)
+ 
+
+

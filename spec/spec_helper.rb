@@ -1,5 +1,5 @@
 ENV['RACK_ENV'] ||= 'test'
-require_relative "../config/environment"
+require_relative "../config/environment.rb"
 
 RSpec.configure do |config|
 
